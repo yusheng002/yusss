@@ -1,0 +1,339 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: #4a4a4a;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+#photo-carousel {
+    margin-bottom: 2rem;
+}
+
+.carousel-image {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    text-align: center;
+}
+
+.social-links a {
+    color: #333;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+}
+
+.chat-interface {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+}
+
+.chat-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.chat-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+}
+
+.chat-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-window {
+    display: none;
+    height: 400px;
+}
+
+.chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+}
+
+#userInput {
+    flex-grow: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#sendButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.user-message {
+    background-color: #e6f2ff;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.ai-message {
+    background-color: #f0f0f0;
+    align-self: flex-start;
+}
+
+.privacy-notice {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+    padding: 5px;
+}
+
+.night-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* 夜间模式 */
+body.night-mode {
+    background-color: #222;
+    color: #f0f0f0;
+}
+
+body.night-mode header {
+    background-color: #333;
+}
+
+body.night-mode footer {
+    background-color: #333;
+}
+
+body.night-mode .social-links a {
+    color: #f0f0f0;
+}
+
+body.night-mode .chat-interface {
+    background-color: #333;
+    border-color: #444;
+}
+
+body.night-mode .chat-toggle {
+    background-color: #0056b3;
+}
+
+body.night-mode #userInput {
+    background-color: #444;
+    color: #f0f0f0;
+    border-color: #555;
+}
+
+body.night-mode #sendButton {
+    background-color: #0056b3;
+}
+
+body.night-mode .user-message {
+    background-color: #2a4d69;
+}
+
+body.night-mode .ai-message {
+    background-color: #4a4a4a;
+}
+
+body.night-mode .night-mode-toggle {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .chat-interface {
+        width: 100%;
+        right: 0;
+    }
+}
+
+#chat-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#chat-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.chat-interface {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-window {
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: white;
+}
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    max-width: 80%;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 20px;
+}
+
+.message.user {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: white;
+}
+
+.message.assistant {
+    align-self: flex-start;
+    background-color: #e9ecef;
+    color: #333;
+}
+
+.chat-input {
+    display: flex;
+    margin-top: 1rem;
+}
+
+#userInput {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 20px 0 0 20px;
+}
+
+#sendButton {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+}
+
+.loading-indicator {
+    text-align: center;
+    padding: 1rem;
+    color: #666;
+}
+
+.privacy-notice {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* 夜间模式样式 */
+body.night-mode #chat-section {
+    background-color: #2c2c2c;
+    color: #f5f5f5;
+}
+
+body.night-mode .chat-window {
+    background-color: #1c1c1c;
+    border-color: #444;
+}
+
+body.night-mode .message.assistant {
+    background-color: #444;
+    color: #f5f5f5;
+}
+
+body.night-mode #userInput {
+    background-color: #1c1c1c;
+    color: #f5f5f5;
+    border-color: #444;
+}
+
+body.night-mode #sendButton {
+    background-color: #0056b3;
+}
+
+/* ... 其他夜间模式样式 ... */
